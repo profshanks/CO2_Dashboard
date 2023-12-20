@@ -236,11 +236,11 @@ template = pn.template.FastListTemplate(
              pn.pane.Markdown("# Who is Generating the CO2 Emissions?"), 
              pn.pane.Markdown("## Select the Year"),
              year_slider,
-             pn.pane.Markdown('#### Carbon dioxide emissions are the primary driver of global climate change. '
-                              'But determining who is responsible for this problem and how to analyze the impact of '
-                              'each nation\'s contribution is not always easy. This dashboard enables casual users '
-                              'to explore the individual contributions of nations & contenents over time. Be playful; '
-                              'see what you might learn!'), 
+             pn.pane.Markdown("#### Carbon dioxide emissions are the primary driver of global climate change. "
+                              "But determining who is responsible for this problem and how to analyze the impact of "
+                              "each nation's contribution is not always easy. This dashboard enables casual users "
+                              "to explore the individual contributions of nations & contenents over time. Be playful; "
+                              "see what you might learn!"), 
              ],
     main=[pn.Row(pn.Column(yaxis_co2, 
                            co2_plot.panel(width=500), margin=(0,10)), 
