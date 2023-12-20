@@ -47,6 +47,8 @@ from panel.io.pyodide import init_doc, write_doc
 
 init_doc()
 
+#!/usr/bin/env python
+
 import pandas as pd
 import numpy as np
 import panel as pn
