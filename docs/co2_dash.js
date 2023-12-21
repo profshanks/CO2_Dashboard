@@ -100,7 +100,7 @@ yaxis_co2 = pn.widgets.RadioButtonGroup(
 co2_pipeline = (
     idf[
         (idf.country.isin(continents) &
-        (idf.year <= int(year_slider))
+        (idf.year <= int(year_slider)))
     ]
     .groupby(['country', 'year'])[yaxis_co2].mean()
     .to_frame()
