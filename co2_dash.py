@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import pandas as pd
-import numpy as np
+#import numpy as np
 import panel as pn
 pn.extension('tabulator')
 
@@ -51,7 +51,7 @@ yaxis_co2 = pn.widgets.RadioButtonGroup(
 co2_pipeline = (
     idf[
         (idf.country.isin(continents) &
-        (idf.year <= year_slider.value))
+        (idf.year <= year_slider))
     ]
     .groupby(['country', 'year'])[yaxis_co2].mean()
     .to_frame()

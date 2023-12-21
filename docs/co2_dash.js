@@ -15,7 +15,7 @@ async function startApplication() {
   self.pyodide.globals.set("sendPatch", sendPatch);
   console.log("Loaded!");
   await self.pyodide.loadPackage("micropip");
-  const env_spec = ['https://cdn.holoviz.org/panel/1.2.3/dist/wheels/bokeh-3.2.2-py3-none-any.whl', 'https://cdn.holoviz.org/panel/1.2.3/dist/wheels/panel-1.2.3-py3-none-any.whl', 'pyodide-http==0.2.1', 'holoviews', 'hvplot', 'numpy', 'pandas']
+  const env_spec = ['https://cdn.holoviz.org/panel/1.2.3/dist/wheels/bokeh-3.1.1-py3-none-any.whl', 'https://cdn.holoviz.org/panel/1.2.3/dist/wheels/panel-1.2.3-py3-none-any.whl', 'pyodide-http==0.2.1', 'pandas', 'holoviews']
   for (const pkg of env_spec) {
     let pkg_name;
     if (pkg.endsWith('.whl')) {
@@ -50,7 +50,7 @@ init_doc()
 #!/usr/bin/env python
 
 import pandas as pd
-import numpy as np
+#import numpy as np
 import panel as pn
 pn.extension('tabulator')
 
@@ -100,7 +100,7 @@ yaxis_co2 = pn.widgets.RadioButtonGroup(
 co2_pipeline = (
     idf[
         (idf.country.isin(continents) &
-        (idf.year <= year_slider.value))
+        (idf.year <= year_slider))
     ]
     .groupby(['country', 'year'])[yaxis_co2].mean()
     .to_frame()
@@ -110,7 +110,7 @@ co2_pipeline = (
 )
 
 
-co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2.value, line_width=2, title="CO2 Emissions by Continent")
+co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2, line_width=2, title="CO2 Emissions by Continent")
 co2_plot = co2_plot.opts(toolbar=None)
 
 # CO2 emission over time by continent
