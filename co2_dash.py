@@ -19,7 +19,7 @@ select_countries = ['Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh'
 continents = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania']
 all_select = select_countries + continents
 
-select = pd.read_csv('select_countries.csv')
+select = pd.read_csv('https://raw.githubusercontent.com/profshanks/CO2_Dashboard/main/select_countries.csv')
 
 select_order = ['World', 'Europe', 'North America', 'South America', 'Asia', 'Africa', 'Oceania', 
                 'Algeria', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Brazil', 'Canada', 'Chile', 
