@@ -110,7 +110,7 @@ co2_pipeline = (
 )
 
 
-co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2, line_width=2, title="CO2 Emissions by Continent")
+co2_plot = co2_pipeline.hvplot(x = 'year', by='country', y=yaxis_co2.value, line_width=2, title="CO2 Emissions by Continent")
 co2_plot = co2_plot.opts(toolbar=None)
 
 # CO2 emission over time by continent
